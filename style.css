@@ -1,0 +1,325 @@
+:root{
+    --color-background: #0b0c44;
+    --color-secondary: #5600ff;
+    --color-text: #d9d9d9;
+    --color-text-opacity: #404179e6;
+    --color-default: #d9d9d9d9;
+    --color-menc-dest: #4548d1;
+    --font-size-text: 16px;
+
+    --border-radius: 15px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* 
+    font-family: "Nunito Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100,
+      "YTLC" 500; */
+
+body{   
+    font-family: "Nunito Sans", serif;
+    height: max-content;
+    width: 100%;
+    overflow-x: hidden;
+    display: grid;
+    background-color: var(--color-background);
+    background-size: 30px 30px;
+    background-position: -5px -5px;
+    flex-wrap: wrap;
+    justify-content: center;    
+    gap: 30px;
+
+    .boxnavbar{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+
+        .navbar{
+            background: rgba( 255, 255, 255, 0.35 );
+            box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+            backdrop-filter: blur( 13.5px );
+            -webkit-backdrop-filter: blur( 13.5px );
+            border-radius: 10px;
+            border: 1px solid var(--color-default);
+            transition: all 1s ease-in-out;
+            width: 100%;
+            min-width: 600px;
+            max-width: 900px;
+            height: 60px;
+            border-radius: var(--border-radius);
+            display: flex;
+            position: fixed;
+            z-index: 9999999;
+            
+            img{
+                position: absolute;
+                width: 40px;
+                margin: 10px;
+                z-index: 9;
+                left: 3px;
+                border-radius: 8px;
+            }
+    
+            .options{
+                align-items: center;
+                position: relative;
+                right: 0px;
+                display: flex;
+                width: 100%;
+                gap: 40px;
+                justify-content: center;
+    
+                a{
+                    text-decoration: none;
+                    color: var(--color-default);
+                    font: bold;
+                    font-style: var(--font-size-text);
+                    transition: all 0.3s ease-in-out;
+                }
+    
+                .glowup{
+                    color: var(--color-background);
+                }
+            }
+        }
+    }
+
+
+    .home{
+        margin-top: 90px;
+        width: 100%;
+        min-width: 600px;
+        max-width: 900px;
+        position: relative;
+        display: flex;
+        height: 400px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .wrapper{
+            scale: 0.5;
+            position: absolute;
+        }
+
+        .boxinfo{
+            z-index: 99999;
+            background-color: var(--color-text-opacity);
+            padding: 20px;
+           
+            width: 500px;
+            border-radius: 50px 0px 50px 50px;
+            color: var(--color-text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+            align-content: center;
+            justify-content: flex-start;
+            transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+            overflow: hidden;
+            height: 140px; /* Começa pequeno */
+            padding: 0 20px; /* Evita padding extra enquanto fechado */
+            background: rgb(69, 72, 209);
+            background: linear-gradient(180deg, rgb(97 12 255) 46%, rgba(0, 212, 255, 0) 100%);
+        
+            .titleinfo{
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                margin: -10px;
+
+            }
+            
+            .typing{
+                font-size: 15px;
+            }
+            
+            span{
+                font-weight: 700;
+                font-size: xxx-large;
+           }
+        }
+
+        .boxinfo.active {
+            height: 140px; /* Ajuste esse valor para algo grande o suficiente */
+            padding: 20px; /* Ativa o padding conforme expande */
+        }
+
+        .downloads{
+            margin-top: 40px;
+        }
+
+        .buttondownload{
+            margin-top: 20px;
+            font: 20px;
+
+            a{
+                color: var(--color-default);
+                text-decoration: none;
+                font-size: var(--font-size-text);
+            }
+            .button {  
+                position: relative;
+                overflow: hidden;
+                height: 3rem;
+                padding: 0 2rem;
+                border-radius: 1.5rem;
+                background: var(--color-secondary);
+                background-size: 400%;
+                color: var(--color-default);
+                border: none;
+                cursor: pointer;
+
+                .button-content {
+                    position: relative;
+                    z-index: 1;
+                }
+            }
+        }
+    }
+
+    .download{
+        position: relative;
+        left: 50%;
+        transform: translate(-50%, 0px);
+        background: var(--color-default);
+        border-radius: var(--border-radius);
+        width: 90dvw;
+        min-width: 600px;
+        max-width: 900px;
+        height: max-content;
+        padding: 30px 0px 30px 0px;
+
+        .box{
+            gap: 20px;
+            display: flex;
+            justify-content: center;
+            padding: 30px;
+            flex-wrap: wrap;
+        }
+    }
+
+    .ex{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .popup{
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 999999999;
+        transition: all 1s ease-in-out; 
+        display: none;
+
+            .cookiecard {
+                width: 300px;
+                height: 220px;
+                background: rgba( 255, 255, 255, 0.75 );
+                box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+                backdrop-filter: blur( 13.5px );
+                -webkit-backdrop-filter: blur( 13.5px );
+                border-radius: 10px;
+                border: 1px solid var(--color-default);
+                border-radius: 25px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 20px 30px;
+                gap: 13px;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            #cookieSvg {
+                width: 100px;
+            }
+            
+            #cookieSvg g path {
+                fill: rgb(97, 81, 81);
+            }
+            
+            .cookieHeading {
+                font-size: 1.2em;
+                font-weight: 800;
+                color: rgb(26, 26, 26);
+            }
+            
+            .cookieDescription {
+                text-align: center;
+                font-size: 0.7em;
+                font-weight: 600;
+                color: rgb(99, 99, 99);
+            }
+            
+            .cookieDescription a {
+                --tw-text-opacity: 1;
+                color: rgb(59 130 246);
+            }
+            
+            .cookieDescription a:hover {
+                -webkit-text-decoration-line: underline;
+                text-decoration-line: underline;
+            }
+            
+            .buttonContainer {
+                display: flex;
+                gap: 20px;
+                flex-direction: row;
+            }
+            
+            .acceptButton {
+                width: 80px;
+                height: 30px;
+                background-color: var(--color-menc-dest);
+                transition-duration: .2s;
+                border: none;
+                color: var(--color-text);
+                cursor: pointer;
+                font-weight: 600;
+                border-radius: 20px;
+                box-shadow: 0 4px 6px -1px var(--color-menc-dest), 0 2px 4px -1px var(--color-menc-dest);
+                transition: all .6s ease;
+            }
+            
+            .declineButton {
+                width: 80px;
+                height: 30px;
+                background-color: var(--color-default);
+                transition-duration: .2s;
+                color: var(--color-text-opacity);
+                border: none;
+                cursor: not-allowed;
+                font-weight: 600;
+                border-radius: 20px;
+                box-shadow: 0 4px 6px -1px var(--color-default), 0 2px 4px -1px var(--color-default);
+                transition: all .6s ease;
+            }
+            
+            .declineButton:hover {
+                background-color: var(--color-default);
+                box-shadow: 0 10px 15px -3px var(--color-default), 0 4px 6px -2px var(--color-default);
+                transition-duration: .2s;
+            }
+            
+            .acceptButton:hover {
+                background-color: var(--color-menc-dest);
+                box-shadow: 0 10px 15px -3px var(--color-menc-dest), 0 4px 6px -2px var(--color-menc-dest);
+                transition-duration: .2s;
+            }
+    }
+}
