@@ -31,9 +31,9 @@ window.addEventListener("scroll", function () {
     }
 
 
-if (window.scrollY >= 500) {
+if (window.scrollY >= 200) {
     if (scroll == 0) {
-        console.log("Scroll passou de 300px!");                                   
+        console.log("Scroll passou de 200px!");                                   
         scroll += 1;
 
         showOnScroll('powershell')
